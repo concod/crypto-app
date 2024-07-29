@@ -2,8 +2,7 @@ import { screen, fireEvent, waitFor, act } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import CryptoTable from "./CryptoTable";
 import axios from "axios";
-import { render } from "../../setupTests"; // Import the custom render
-
+import { render } from "../../setupTests";
 // Mocking axios
 jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
