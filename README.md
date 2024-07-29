@@ -1,6 +1,6 @@
 # Cryptocurrency Application
 
-A comprehensive cryptocurrency application built with React.js and Material-UI, featuring real-time updates, historical data, and a responsive design. This application allows users to track cryptocurrency prices, view detailed information about each coin, and manage favorite cryptocurrencies.
+A comprehensive cryptocurrency application built with React.js, AG Grid, and Material-UI, featuring real-time updates, historical data, and a responsive design. This application allows users to track cryptocurrency prices, view detailed information about each coin, and manage favorite cryptocurrencies.
 
 ## Table of Contents
 
@@ -13,6 +13,8 @@ A comprehensive cryptocurrency application built with React.js and Material-UI, 
 7. [WebSocket Integration](#websocket-integration)
 8. [Search Functionality](#search-functionality)
 9. [Testing](#testing)
+10. [Contributing](#contributing)
+11. [License](#license)
 
 ## Project Overview
 
@@ -42,19 +44,27 @@ Follow these steps to set up the project on your local machine:
 
 1. **Clone the repository:**
 
-   git clone https://github.com/concod/crypto-app.git
+   ```bash
+   git clone https://github.com/your-username/cryptocurrency-application.git
+   ```
 
 2. **Navigate to the project directory:**
 
-   cd crypto-app
+   ```bash
+   cd cryptocurrency-application
+   ```
 
 3. **Install the dependencies:**
 
+   ```bash
    yarn install
+   ```
 
 4. **Start the development server:**
 
+   ```bash
    yarn start
+   ```
 
 5. **Open your browser and visit:**
 
@@ -88,4 +98,7 @@ Replace the placeholders with actual asset names. Ensure to update the URL with 
 
 The project includes unit and integration tests. To run the tests, use:
 
+```bash
 yarn test
+
+```
