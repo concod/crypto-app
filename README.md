@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# Cryptocurrency Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive cryptocurrency application built with React.js and Material-UI, featuring real-time updates, historical data, and a responsive design. This application allows users to track cryptocurrency prices, view detailed information about each coin, and manage favorite cryptocurrencies.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Technologies Used](#technologies-used)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [API Integration](#api-integration)
+7. [WebSocket Integration](#websocket-integration)
+8. [Search Functionality](#search-functionality)
+9. [Testing](#testing)
 
-### `yarn start`
+## Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This cryptocurrency application provides a user-friendly interface to view real-time and historical data of various cryptocurrencies. Users can explore the list of cryptocurrencies, view detailed information about each coin, and access price history charts. The application supports persistent state for user favorites and updates data using WebSockets for real-time price changes.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `yarn test`
+- **Real-Time Price Updates:** Get live price updates for over 100 cryptocurrencies using WebSockets.
+- **Historical Data:** View historical price data with interactive charts.
+- **Favorites:** Add or remove cryptocurrencies from favorites with persistent state using local storage.
+- **Responsive Design:** Optimized for both desktop and mobile devices.
+- **Search Functionality:** Search for cryptocurrencies by name.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `yarn build`
+- **React.js:** Frontend library for building user interfaces.
+- **AG Grid:** For displaying and managing tabular data.
+- **Material-UI:** Design library for consistent and modern UI components.
+- **Chart.js:** For rendering interactive charts.
+- **Axios:** For making HTTP requests.
+- **WebSocket:** For real-time data updates.
+- **Local Storage:** For persisting favorite cryptocurrencies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Follow these steps to set up the project on your local machine:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository:**
 
-### `yarn eject`
+   git clone https://github.com/your-username/cryptocurrency-application.git
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. **Navigate to the project directory:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   cd crypto-app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **Install the dependencies:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   yarn install
 
-## Learn More
+4. **Start the development server:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   yarn start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Open your browser and visit:**
+
+   http://localhost:3000
+
+## Usage
+
+- **Home Page:** Displays a list of cryptocurrencies with real-time prices and includes a search feature to filter cryptocurrencies by name.
+- **Details Page:** Provides detailed information and historical price charts for a selected cryptocurrency.
+- **Favorites:** Add cryptocurrencies to your favorites list to quickly access them later.
+
+## Search Functionality
+
+The application includes a search feature on the home page that allows users to filter the cryptocurrency list by name. This feature enhances user experience by enabling quick access to specific cryptocurrencies. The search functionality is implemented with a text input field that filters the displayed list based on the user's input.
+
+## API Integration
+
+The application uses the following APIs:
+
+- **CoinCap API:** For fetching cryptocurrency details and historical data.
+  - **Endpoint for asset details:** `https://api.coincap.io/v2/assets/{id}`
+  - **Endpoint for historical data:** `https://api.coincap.io/v2/assets/{id}/history?interval=d1`
+
+## WebSocket Integration
+
+The application listens to WebSocket events for real-time price updates for over 100 cryptocurrencies. The WebSocket URL used is: wss://ws.coincap.io/prices?assets=bitcoin,ethereum,monero,litecoin,...,n
+
+Replace the placeholders with actual asset names. Ensure to update the URL with the complete list of assets required.
+
+## Testing
+
+The project includes unit and integration tests. To run the tests, use:
+
+yarn test

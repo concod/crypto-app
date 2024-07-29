@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+import PageLoader from "components/PageLoader";
+
+// Lazy load the components
+const CryptoDetails = lazy(
+  () => import("components/CryptoDetails/CryptoDetails")
+);
+const CryptoTable = lazy(() => import("components/CryptoTable/CryptoTable"));
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Suspense fallback={<PageLoader />}>
+        <Routes>
+          <Route path="/" element={<CryptoTable />} />
+          <Route path="/details/:id" element={<CryptoDetails />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
-}
+};
 
 export default App;
