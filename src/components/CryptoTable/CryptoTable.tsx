@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import { Star, StarBorder } from "@mui/icons-material";
 import { visuallyHidden } from "@mui/utils";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { fetchCryptoData } from "services/fetchCryptoData";
 
 // Define the CryptoData interface for type safety
@@ -40,7 +40,6 @@ const CryptoTable: React.FC = () => {
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const navigate = useNavigate();
   const wsRef = useRef<WebSocket | null>(null); // Use ref for WebSocket connection
   const theme = useTheme();
 

@@ -107,9 +107,10 @@ const CryptoDetails: React.FC = () => {
     fetchData();
 
     // Cleanup function to destroy the chart reference if it exists
+    const currentChartRef = chartRef.current;
     return () => {
-      if (chartRef.current) {
-        chartRef.current.destroy();
+      if (currentChartRef) {
+        currentChartRef.destroy();
       }
     };
   }, [id]);
